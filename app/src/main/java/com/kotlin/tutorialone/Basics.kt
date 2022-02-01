@@ -14,11 +14,14 @@ fun main(){
     var firstChar= myStr[5]; // returning 5th character [0,1,2,3,4]
     var lastChar= myStr[myStr.length-1]; // returning last character
     var total=4
-    val a=3
-    val b=2
+    val a=20
+    val b=20
+
+    // Assignment operators (+=, -=, *=, /=, %=)
+    // increment and decrement operators( ++num num++ --num num--)
 
     println("My name $myName")
-    myName="Supun";
+    myName="Sri Lanka";
     println("My name change to $myName")
     println("My address $myAddress")
     println( "Numbers "+(number+number1).toString())
@@ -28,6 +31,28 @@ fun main(){
     println("Last Character $lastChar")
     println("Concatenation $lastChar is the last character and ${myStr.length} is the length")
     println("total ${total+a+b}")
+
+
+    if(myName.equals(myAddress)){
+        println("both equal")
+    }else{
+        println("not equal")
+    }
+
+    when(total) { // without if else we can replace with when
+        2 -> {
+            println("total is 2")
+        }
+        in 2..10 -> {
+            println("total between 2 and ten")
+        }
+        is Int -> {
+            println("is int")
+        }
+        else -> {
+            println("a smaller than b")
+        }
+    }
 
 
 
