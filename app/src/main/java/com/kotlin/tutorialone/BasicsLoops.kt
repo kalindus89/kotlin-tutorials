@@ -43,4 +43,24 @@ fun main(){
     for(number  in 10 downTo 1 step 2){ // -2
         print("$number ")
     }
+
+    println("\n")
+    for(number in 1 until 10){
+
+        if(number==5){
+            break; // stop the loop when number =5
+        }
+        print("$number ")
+    }
+
+    println("\n")
+    for(number in 1 until 10){
+
+        if(number==5){
+            continue; // no 5 prints
+        }
+        print("$number ")
+    }
+
+
 }
