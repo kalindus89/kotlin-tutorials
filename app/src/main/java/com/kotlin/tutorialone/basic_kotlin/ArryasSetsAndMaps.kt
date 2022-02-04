@@ -45,7 +45,7 @@ fun main(){
 
     for (getFruitsClass in fruitsClass){
 
-        println("fruits ${getFruitsClass.key} - ${getFruitsClass.value.name}")
+        println("fruits ${getFruitsClass.key} - ${getFruitsClass.value.name}  - ${getFruitsClass.value.price}")
     }
 
 }

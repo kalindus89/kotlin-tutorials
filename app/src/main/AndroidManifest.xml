@@ -11,6 +11,9 @@
         android:theme="@style/Theme.TutorialOne">
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calculate_age_time.AgeTimeCalculateActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
