@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
         <activity
+            android:name=".calculate_age_time.AgeTimeCalculateActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".calculate_age_time.AgeTimeCalculateActivity"
+            android:name=".calculator_app.CalculatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
