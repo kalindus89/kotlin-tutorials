@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
         <activity
+            android:name=".navigation_components.NavigationComponetActivity"
+            android:exported="false" />
+        <activity
             android:name=".calculate_age_time.AgeTimeCalculateActivity"
             android:exported="false" />
         <activity
