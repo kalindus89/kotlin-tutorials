@@ -9,15 +9,30 @@
         android:id="@+id/firstFragment"
         android:name="com.kotlin.tutorialone.navigation_components.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/to_secondFragmentFrom1"
+            app:destination="@id/secondFragment" />
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.kotlin.tutorialone.navigation_components.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/to_firstFragment2"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/to_thirdFragmentFrom2"
+            app:destination="@id/thirdFragment" />
+    </fragment>
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.kotlin.tutorialone.navigation_components.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/to_secondFragmentFrom3"
+            app:destination="@id/secondFragment" />
+    </fragment>
 </navigation>

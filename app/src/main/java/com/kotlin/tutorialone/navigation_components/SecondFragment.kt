@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.Navigation
 import com.kotlin.tutorialone.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +37,15 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        val view =inflater.inflate(R.layout.fragment_second, container, false)
+        var txt = view.findViewById<TextView>(R.id.txt2)
+
+        txt.setOnClickListener {
+
+            Navigation.findNavController(view).navigate(R.id.to_thirdFragmentFrom2)
+
+        }
+        return view
     }
 
     companion object {

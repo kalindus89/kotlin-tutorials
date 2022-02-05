@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
         <activity
-            android:name=".navigation_components.NavigationComponetActivity"
+            android:name=".calculator_app.CalculatorActivity"
             android:exported="false" />
         <activity
             android:name=".calculate_age_time.AgeTimeCalculateActivity"
@@ -19,7 +19,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".calculator_app.CalculatorActivity"
+            android:name=".navigation_components.NavigationComponentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
