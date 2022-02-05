@@ -1,7 +1,6 @@
-package com.kotlin.tutorialone.oop_kotlin
+package com.kotlin.tutorialone.kolin_basic_tutorials.oop_kotlin
 
 import java.lang.IllegalArgumentException
-import kotlin.math.max
 
 fun main() {
 

@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.oop_kotlin
+package com.kotlin.tutorialone.kolin_basic_tutorials.oop_kotlin
 
 abstract class Mammal(private var name:String, private var origin:String, private var weight:Double){
 

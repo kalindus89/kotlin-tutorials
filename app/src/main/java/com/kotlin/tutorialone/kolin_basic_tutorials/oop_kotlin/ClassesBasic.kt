@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.oop_kotlin
+package com.kotlin.tutorialone.kolin_basic_tutorials.oop_kotlin
 
 fun main(){
 
