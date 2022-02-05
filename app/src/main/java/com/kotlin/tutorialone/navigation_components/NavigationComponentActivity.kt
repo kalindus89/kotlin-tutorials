@@ -7,6 +7,8 @@ import com.kotlin.tutorialone.R
 class NavigationComponentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_navigation_componet)
+
     }
 }
