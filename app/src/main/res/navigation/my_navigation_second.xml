@@ -12,11 +12,29 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_viewpagerFragment"
-            app:destination="@id/viewpagerFragment" />
+            app:destination="@id/viewpagerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/viewpagerFragment"
         android:name="com.kotlin.tutorialone.navigation_componet_two.on_boarding.ViewpagerFragment"
         android:label="fragment_viewpager"
-        tools:layout="@layout/fragment_viewpager" />
+        tools:layout="@layout/fragment_viewpager" >
+        <action
+            android:id="@+id/action_viewpagerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/viewpagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kotlin.tutorialone.navigation_componet_two.on_boarding.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

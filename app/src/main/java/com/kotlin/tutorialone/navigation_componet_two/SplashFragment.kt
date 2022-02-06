@@ -1,5 +1,6 @@
 package com.kotlin.tutorialone.navigation_componet_two
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -22,10 +23,21 @@ class SplashFragment : Fragment() {
 
 
         Handler().postDelayed({
-            Navigation.findNavController(view).navigate(R.id.viewpagerFragment)
-        },3000)
+            if(checkOnBoardingFinish()){
+                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_homeFragment)
+            }else{
+                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_viewpagerFragment)
+            }
+        },2000)
 
         return view
+    }
+
+    fun checkOnBoardingFinish():Boolean {
+
+        val sharedPref=requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("finished",false)
+
     }
 
 
