@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_delivery.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_food.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_payment.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1995" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/activity_age_time_calculate.xml" value="0.264" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/activity_calculator.xml" value="0.264" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/activity_navigation_component_second.xml" value="0.25" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/activity_navigation_componet.xml" value="0.176" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_frist_screen.xml" value="0.24365942028985507" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_second.xml" value="0.25" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_second_screen.xml" value="0.24365942028985507" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_splash.xml" value="0.24365942028985507" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_third.xml" value="0.25" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_third_screen.xml" value="0.24365942028985507" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_viewpager.xml" value="0.16" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/menu/drawer_menu.xml" value="0.25" />
       </map>
