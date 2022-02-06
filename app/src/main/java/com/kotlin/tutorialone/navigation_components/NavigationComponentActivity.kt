@@ -14,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.kotlin.tutorialone.R
 
@@ -23,6 +24,7 @@ class NavigationComponentActivity : AppCompatActivity() {
     private lateinit var drawerLayout:DrawerLayout
     private lateinit var navigationView:NavigationView
     private lateinit var appBarConfiguration:AppBarConfiguration
+    private lateinit var bottom_nav2:BottomNavigationView
 
     private lateinit var listener:NavController.OnDestinationChangedListener
 
@@ -33,7 +35,11 @@ class NavigationComponentActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_navigation_componet)
 
+
         navController=findNavController(R.id.fragmentContainerView) // change FragmentContainerView to fragment
+
+        bottom_nav2=findViewById(R.id.bottom_nav2);
+        bottom_nav2.setupWithNavController(navController)
 
         navigationView=findViewById(R.id.navigationView)
         navigationView.setupWithNavController(navController)
@@ -52,7 +58,6 @@ class NavigationComponentActivity : AppCompatActivity() {
             } else if (destination.id==R.id.thirdFragment){
                 supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.purple_700)))
             }
-
         }
 
     }
