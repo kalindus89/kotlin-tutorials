@@ -18,9 +18,9 @@ class ThirdFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =inflater.inflate(R.layout.fragment_third, container, false)
-        var txt = view.findViewById<TextView>(R.id.txt3)
+        var backToSecond = view.findViewById<TextView>(R.id.backToSecond)
 
-        txt.setOnClickListener {
+        backToSecond.setOnClickListener {
 
             Navigation.findNavController(view).navigate(R.id.to_secondFragmentFrom3)
 
