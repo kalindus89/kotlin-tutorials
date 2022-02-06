@@ -10,19 +10,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.kotlin.tutorialone.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SecondFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondFragment : Fragment() {
-
-
 
     val getPassedArgumentValues : SecondFragmentArgs by navArgs() // val type.. get the value passed from fragment
 

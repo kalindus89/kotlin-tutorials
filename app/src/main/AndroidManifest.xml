@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
         <activity
-            android:name=".navigation_components.NavigationComponentActivity"
+            android:name=".navigation_componet_two.NavigationComponentSecondActivity"
             android:exported="false" />
         <activity
             android:name=".calculator_app.CalculatorActivity"
@@ -22,7 +22,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".navigation_componet_two.NavigationComponentSecondActivity"
+            android:name=".navigation_components.NavigationComponentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
