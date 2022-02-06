@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="ModelResponse"
+            name="modelResponse"
             type="com.kotlin.tutorialone.mvvm_retrofit.ModelResponse" />
     </data>
 
@@ -36,7 +36,7 @@
                         android:layout_height="195dp"
                         android:background="@drawable/captain_marvel"
                         android:scaleType="centerCrop"
-                        app:image="@{ModelResponse.poster}" />
+                        app:image="@{modelResponse.poster}" />
 
                     <TextView
                         android:id="@+id/textViewRating"
@@ -110,7 +110,7 @@
                         android:id="@+id/textViewTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{ModelResponse.name}"
+                        android:text="@{modelResponse.name}"
                         android:textColor="#1A1A1A"
                         android:textSize="18sp"
                         tools:text="Captain Marvel" />
@@ -120,7 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textViewTitle"
-                        android:text="@{ModelResponse.id}"
+                        android:text="@{modelResponse.id}"
                         tools:text="English" />
 
                     <Button
@@ -146,7 +146,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
                     android:padding="2dp"
-                    android:text="@{ModelResponse.quote}"
+                    android:text="@{modelResponse.quote}"
                     android:textAlignment="center"
                     android:textColor="@color/black" />
 

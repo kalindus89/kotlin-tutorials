@@ -14,15 +14,7 @@ class MovieMainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_movie_main)
 
-        val repository = MoviesRepository(MovieApi())
 
-        GlobalScope.launch (Dispatchers.Main){ // because we used coroutines
-
-            val movies =   repository.getMovies()
-
-            Toast.makeText(this@MovieMainActivity, movies.toString(), Toast.LENGTH_SHORT).show()
-
-        }
 
 
     }
