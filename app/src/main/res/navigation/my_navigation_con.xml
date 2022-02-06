@@ -13,8 +13,8 @@
         <action
             android:id="@+id/to_secondFragmentFrom1"
             app:destination="@id/secondFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -23,12 +23,18 @@
         tools:layout="@layout/fragment_second" >
         <action
             android:id="@+id/to_firstFragment2"
-            app:destination="@id/firstFragment" />
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/to_thirdFragmentFrom2"
             app:destination="@id/thirdFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <argument
             android:name="testNumber"
             app:argType="integer"
@@ -42,7 +48,7 @@
         <action
             android:id="@+id/to_secondFragmentFrom3"
             app:destination="@id/secondFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
 </navigation>
