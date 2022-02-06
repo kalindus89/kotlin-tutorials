@@ -15,6 +15,9 @@
             app:destination="@id/secondFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_firstFragment_to_firstFragmentForBottomSheet"
+            app:destination="@id/firstFragmentForBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -50,4 +53,13 @@
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right" />
     </fragment>
+    <dialog
+        android:id="@+id/firstFragmentForBottomSheet"
+        android:name="com.kotlin.tutorialone.navigation_components.FirstFragmentForBottomSheet"
+        android:label="fragment_first_for_bottom_sheet"
+        tools:layout="@layout/fragment_first_for_bottom_sheet" >
+        <action
+            android:id="@+id/action_firstFragmentForBottomSheet_to_firstFragment"
+            app:destination="@id/firstFragment" />
+    </dialog>
 </navigation>
