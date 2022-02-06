@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_navigation_con"
-    app:startDestination="@id/secondFragment">
+    app:startDestination="@id/firstFragment">
 
     <fragment
         android:id="@+id/firstFragment"
@@ -36,9 +36,8 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
         <argument
-            android:name="testNumber"
-            app:argType="integer"
-            android:defaultValue="2" />
+            android:name="currentUser"
+            app:argType="com.kotlin.tutorialone.navigation_components.UserModel" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"

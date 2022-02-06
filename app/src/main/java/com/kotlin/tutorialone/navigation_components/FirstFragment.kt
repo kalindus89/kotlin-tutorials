@@ -23,8 +23,11 @@ class FirstFragment : Fragment() {
 
         nextToSecond.setOnClickListener {
 
+
+            var userModel=UserModel("kalindu","Supun")
+
             //https://www.youtube.com/watch?v=vx1-V3HH0IU&list=PLSrm9z4zp4mHilvsfUM3jeCYFV3fTAS3J&index=2
-            val action = FirstFragmentDirections.toSecondFragmentFrom1(144) // passing values to 2nd fragments. sync safegard in both gradles
+            val action = FirstFragmentDirections.toSecondFragmentFrom1(userModel) // passing values to 2nd fragments. sync safegard in both gradles
             Navigation.findNavController( view).navigate(action) // no need R.id here because it defines in above line
 
         }

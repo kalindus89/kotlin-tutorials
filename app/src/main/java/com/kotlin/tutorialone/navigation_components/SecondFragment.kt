@@ -27,7 +27,7 @@ class SecondFragment : Fragment() {
 
         var txt = view.findViewById<TextView>(R.id.txt2)
 
-        txt.text=getPassedArgumentValues.testNumber.toString()
+        txt.text=getPassedArgumentValues.currentUser.fName+" "+getPassedArgumentValues.currentUser.lname
 
         backToFirst.setOnClickListener {
 

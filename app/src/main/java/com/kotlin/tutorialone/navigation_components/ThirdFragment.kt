@@ -22,7 +22,13 @@ class ThirdFragment : Fragment() {
 
         backToSecond.setOnClickListener {
 
-            Navigation.findNavController(view).navigate(R.id.to_secondFragmentFrom3)
+           // Navigation.findNavController(view).navigate(R.id.to_secondFragmentFrom3)
+
+            var userModel=UserModel("kalindu","Hettiarachchi")
+
+            //https://www.youtube.com/watch?v=vx1-V3HH0IU&list=PLSrm9z4zp4mHilvsfUM3jeCYFV3fTAS3J&index=2
+            val action = ThirdFragmentDirections.toSecondFragmentFrom3(userModel) // passing values to 2nd fragments. sync safegard in both gradles
+            Navigation.findNavController( view).navigate(action) // no need R.id here because it defines in above line
 
         }
         return view
