@@ -11,8 +11,8 @@ class MoviesRecyclerAdapter(private val movies: List<ModelResponse>) :
     RecyclerView.Adapter<MoviesRecyclerAdapter.MovieViewHolder>() {
 
 
-    inner class MovieViewHolder(val viewHolder: RecyclerviewMovieBinding) :
-        RecyclerView.ViewHolder(viewHolder.root)
+    inner class MovieViewHolder(val recyclerviewMovieBinding: RecyclerviewMovieBinding) :
+        RecyclerView.ViewHolder(recyclerviewMovieBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MovieViewHolder(
 
@@ -24,10 +24,11 @@ class MoviesRecyclerAdapter(private val movies: List<ModelResponse>) :
     )
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-           holder.viewHolder.modelResponse=movies[position]
+       holder.recyclerviewMovieBinding.modelResponse=movies[position]
     }
 
     override fun getItemCount(): Int {
        return movies.size
     }
 }
+

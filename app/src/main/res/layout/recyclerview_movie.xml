@@ -30,13 +30,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp">
 
-                    <ImageView
+                   <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
                         android:layout_height="195dp"
                         android:background="@drawable/captain_marvel"
-                        android:scaleType="centerCrop"
-                        app:image="@{modelResponse.poster}" />
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/textViewRating"
