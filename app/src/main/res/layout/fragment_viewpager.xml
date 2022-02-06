@@ -6,6 +6,7 @@
     tools:context=".navigation_componet_two.on_boarding.ViewpagerFragment">
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

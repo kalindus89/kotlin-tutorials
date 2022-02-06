@@ -9,5 +9,14 @@
         android:id="@+id/splashFragment"
         android:name="com.kotlin.tutorialone.navigation_componet_two.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_viewpagerFragment"
+            app:destination="@id/viewpagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewpagerFragment"
+        android:name="com.kotlin.tutorialone.navigation_componet_two.on_boarding.ViewpagerFragment"
+        android:label="fragment_viewpager"
+        tools:layout="@layout/fragment_viewpager" />
 </navigation>
