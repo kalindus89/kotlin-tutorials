@@ -30,8 +30,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp">
 
-                   <ImageView
+                    <ImageView
                         android:id="@+id/imageView"
+                        app:imageToLoad="@{modelResponse.poster}"
                         android:layout_width="match_parent"
                         android:layout_height="195dp"
                         android:background="@drawable/captain_marvel"

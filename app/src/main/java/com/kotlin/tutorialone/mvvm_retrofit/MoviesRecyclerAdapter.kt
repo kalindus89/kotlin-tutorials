@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.tutorialone.R
 import com.kotlin.tutorialone.databinding.RecyclerviewMovieBinding
 
-class MoviesRecyclerAdapter(private val movies: List<ModelResponse>) :
+class MoviesRecyclerAdapter(private val movies: List<ModelResponse>, private val listener: RecyclerClickListener) :
     RecyclerView.Adapter<MoviesRecyclerAdapter.MovieViewHolder>() {
 
 
@@ -24,7 +24,16 @@ class MoviesRecyclerAdapter(private val movies: List<ModelResponse>) :
     )
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-       holder.recyclerviewMovieBinding.modelResponse=movies[position]
+
+        holder.recyclerviewMovieBinding.modelResponse=movies[position]
+
+        holder.recyclerviewMovieBinding.buttonBook.setOnClickListener{
+            listener.onRecyclerItemClick(holder.recyclerviewMovieBinding.buttonBook,movies[position])
+        } // implement in fragment and interface
+        holder.recyclerviewMovieBinding.textViewTitle.setOnClickListener {
+            listener.onRecyclerItemClick(holder.recyclerviewMovieBinding.textViewTitle,movies[position])
+        }
+
     }
 
     override fun getItemCount(): Int {

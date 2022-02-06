@@ -5,4 +5,8 @@ data class ModelResponse(
     val name:String,
     val quote:String,
     val poster:String
+
+  /*  val caseid:Int,
+    val text:String,*/
+
     )
