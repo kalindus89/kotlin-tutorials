@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kotlin.tutorialone">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
+        <activity
+            android:name=".navigation_components.NavigationComponentActivity"
+            android:exported="false" />
         <activity
             android:name=".navigation_componet_two.NavigationComponentSecondActivity"
             android:exported="false" />
@@ -22,7 +27,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".navigation_components.NavigationComponentActivity"
+            android:name=".mvvm_retrofit.MovieMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
