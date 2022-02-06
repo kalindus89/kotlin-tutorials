@@ -13,7 +13,7 @@ interface MovieApi {
     that they are only allowed to be called from a coroutine or another suspend function.*/
 
     @GET("Avengers.json")
-    suspend fun getMovies():Response<List<MovieResponses>>
+    suspend fun getMovies():Response<List<ModelResponse>>
 
     companion object{
         operator fun invoke():MovieApi{

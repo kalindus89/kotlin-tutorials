@@ -1,6 +1,6 @@
 package com.kotlin.tutorialone.mvvm_retrofit
 
-data class MovieResponses(
+data class ModelResponse(
     val id:String,
     val name:String,
     val quote:String,
