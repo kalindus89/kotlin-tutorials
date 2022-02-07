@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.models
 
 data class ModelResponse(
     val id:String,

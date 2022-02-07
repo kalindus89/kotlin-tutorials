@@ -1,7 +1,8 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.kotlin.tutorialone.mvvm_retrofit.repository.MoviesRepository
 
 class MoviesViewModelFactory(private val repository: MoviesRepository):ViewModelProvider.NewInstanceFactory() {
 

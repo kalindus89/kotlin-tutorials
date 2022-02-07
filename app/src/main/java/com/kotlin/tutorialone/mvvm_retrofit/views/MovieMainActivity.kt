@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

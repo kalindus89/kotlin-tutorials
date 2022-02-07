@@ -9,7 +9,7 @@
 
         <variable
             name="modelResponse"
-            type="com.kotlin.tutorialone.mvvm_retrofit.ModelResponse" />
+            type="com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse" />
     </data>
 
     <LinearLayout

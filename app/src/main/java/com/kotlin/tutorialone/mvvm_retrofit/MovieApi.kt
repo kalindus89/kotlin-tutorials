@@ -1,5 +1,6 @@
 package com.kotlin.tutorialone.mvvm_retrofit
 
+import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,15 +13,20 @@ interface MovieApi {
     One of the most important points to remember about the suspend functions is
     that they are only allowed to be called from a coroutine or another suspend function.*/
 
-    @GET("Avengers.json")
+
+    @GET("933a70b21d7c96e8a8fdbe31ca72dada/raw")
     suspend fun getMovies():Response<List<ModelResponse>>
+
+
+    @GET("aa3bbbf495b0fa91db8a9e89f34e4873/raw")
+    suspend fun getDisneyMovies():Response<List<ModelResponse>>
 
     companion object{
         operator fun invoke():MovieApi{
 
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://gist.githubusercontent.com/skydoves/933a70b21d7c96e8a8fdbe31ca72dada/raw/454f107f2c5f32c13823f7a6fd5031900f280d7c/")
+                .baseUrl("https://gist.githubusercontent.com/skydoves/")
                // .baseUrl("http://mobileapi.efserver.net/mobile_api_test/")
                 .build()
                 .create(MovieApi::class.java)

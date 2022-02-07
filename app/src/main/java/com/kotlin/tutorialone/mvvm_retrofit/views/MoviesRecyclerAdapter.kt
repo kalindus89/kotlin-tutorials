@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.views
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.tutorialone.R
 import com.kotlin.tutorialone.databinding.RecyclerviewMovieBinding
+import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse
 
 class MoviesRecyclerAdapter(private val movies: List<ModelResponse>, private val listener: RecyclerClickListener) :
     RecyclerView.Adapter<MoviesRecyclerAdapter.MovieViewHolder>() {

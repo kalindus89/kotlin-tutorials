@@ -1,8 +1,11 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.kotlin.tutorialone.mvvm_retrofit.Coroutines
+import com.kotlin.tutorialone.mvvm_retrofit.repository.MoviesRepository
+import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse
 import kotlinx.coroutines.Job
 
 class MovieListViewModel(private val repository: MoviesRepository) : ViewModel() {
@@ -15,10 +18,9 @@ class MovieListViewModel(private val repository: MoviesRepository) : ViewModel()
 
      fun getMovies(){
 
-        work =Coroutines.ioThenMain(
-            {repository.getMovies()}
-            ,{
-                movies.value=it
+        work = Coroutines.ioThenMain(
+            { repository.getMovies() }, {
+                movies.value = it
             })
 
     }

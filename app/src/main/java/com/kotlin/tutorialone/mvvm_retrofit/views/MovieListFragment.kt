@@ -1,4 +1,4 @@
-package com.kotlin.tutorialone.mvvm_retrofit
+package com.kotlin.tutorialone.mvvm_retrofit.views
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -11,8 +11,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.tutorialone.R
+import com.kotlin.tutorialone.mvvm_retrofit.MovieApi
+import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse
+import com.kotlin.tutorialone.mvvm_retrofit.repository.MoviesRepository
+import com.kotlin.tutorialone.mvvm_retrofit.view_model.MovieListViewModel
+import com.kotlin.tutorialone.mvvm_retrofit.view_model.MoviesViewModelFactory
 
-class MovieListFragment : Fragment(),RecyclerClickListener {
+class MovieListFragment : Fragment(), RecyclerClickListener {
 
     private lateinit var factory: MoviesViewModelFactory
     private lateinit var viewModel: MovieListViewModel
@@ -24,16 +29,16 @@ class MovieListFragment : Fragment(),RecyclerClickListener {
 
         recyclerView=view.findViewById<RecyclerView>(R.id.recyclerView)
 
-        val api =MovieApi()
-        val repository =MoviesRepository(api)
-        factory=MoviesViewModelFactory(repository)
+        val api = MovieApi()
+        val repository = MoviesRepository(api)
+        factory= MoviesViewModelFactory(repository)
         viewModel = ViewModelProvider(this,factory).get(MovieListViewModel::class.java)
         viewModel.getMovies()
         viewModel.moviesLive.observe(viewLifecycleOwner, Observer { movies->
             recyclerView.also {
                 it.layoutManager=LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
-                it.adapter=MoviesRecyclerAdapter(movies,this)
+                it.adapter= MoviesRecyclerAdapter(movies,this)
 
             }
         })
