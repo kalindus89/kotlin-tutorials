@@ -1,6 +1,7 @@
 package com.kotlin.tutorialone.mvvm_retrofit
 
 import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponse
+import com.kotlin.tutorialone.mvvm_retrofit.models.ModelResponseDisney
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +20,7 @@ interface MovieApi {
 
 
     @GET("aa3bbbf495b0fa91db8a9e89f34e4873/raw")
-    suspend fun getDisneyMovies():Response<List<ModelResponse>>
+    suspend fun getDisneyMovies():Response<List<ModelResponseDisney>>
 
     companion object{
         operator fun invoke():MovieApi{

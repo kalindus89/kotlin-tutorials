@@ -9,5 +9,18 @@
         android:id="@+id/movieListFragment"
         android:name="com.kotlin.tutorialone.mvvm_retrofit.views.MovieListFragment"
         android:label="movie_list_fragment"
-        tools:layout="@layout/movie_list_fragment" />
+        tools:layout="@layout/movie_list_fragment" >
+        <action
+            android:id="@+id/action_movieListFragment_to_secondFragmentDisney"
+            app:destination="@id/secondFragmentDisney" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragmentDisney"
+        android:name="com.kotlin.tutorialone.mvvm_retrofit.views.second_fragment.SecondFragmentDisney"
+        android:label="fragment_second_disney"
+        tools:layout="@layout/fragment_second_disney" >
+        <action
+            android:id="@+id/action_secondFragmentDisney_to_movieListFragment"
+            app:destination="@id/movieListFragment" />
+    </fragment>
 </navigation>
