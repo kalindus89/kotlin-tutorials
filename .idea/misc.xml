@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/edit_text_round_gray_background.xml" value="0.2" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_app_logo.xml" value="0.2" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_delivery.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_email.xml" value="0.2" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_food.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_like.xml" value="0.1995" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_lock.xml" value="0.2" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_name.xml" value="0.2" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_payment.xml" value="0.1995" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1995" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/drawable/relativelayout_background.xml" value="0.1995" />
@@ -29,6 +35,8 @@
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_third_screen.xml" value="0.24365942028985507" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/fragment_viewpager.xml" value="0.16" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/movie_list_fragment.xml" value="0.24365942028985507" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/mvvm_login_activity.xml" value="0.245018115942029" />
+        <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/mvvm_sign_up_activity.xml" value="0.245018115942029" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/recyclerview_disney_movie.xml" value="0.23822463768115942" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/layout/recyclerview_movie.xml" value="0.24365942028985507" />
         <entry key="..\:/Work/Android/AndroidStudioProjects/AndroidKotilnProjects/KotlinCourseOne/app/src/main/res/menu/bottom_menu.xml" value="0.25" />

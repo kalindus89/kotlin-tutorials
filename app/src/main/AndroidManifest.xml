@@ -2,16 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kotlin.tutorialone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.TutorialOne">
+        <activity
+            android:name=".mvvm_full_tutorial.ui.auth.MvvmSignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm_retrofit.views.MovieMainActivity"
+            android:exported="false" />
         <activity
             android:name=".navigation_components.NavigationComponentActivity"
             android:exported="false" />
@@ -28,7 +34,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm_retrofit.views.MovieMainActivity"
+            android:name=".mvvm_full_tutorial.ui.auth.MvvmLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,4 +10,7 @@
     <color name="grey">#EFEFEF</color>
     <color name="grey_numbers">#90a4ae</color>
     <color name="blue">#7BCEFF</color>
+    <color name="colorPrimary">#969EEE</color>
+    <color name="colorPrimaryDark">#555C96</color>
+    <color name="colorAccent">#969EEE</color>
 </resources>
