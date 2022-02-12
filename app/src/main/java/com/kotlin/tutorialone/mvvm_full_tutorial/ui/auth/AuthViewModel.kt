@@ -1,8 +1,11 @@
 package com.kotlin.tutorialone.mvvm_full_tutorial.ui.auth
 
+import android.content.Context
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.repository.UserRepository
+import com.kotlin.tutorialone.mvvm_full_tutorial.utils.Coroutiness
 
 class AuthViewModel : ViewModel() {
     //two way databinding
@@ -21,8 +24,19 @@ class AuthViewModel : ViewModel() {
 
             listener?.onStarted()
 
-            val loginResponse=UserRepository().userLogin(email!!,password!!)
-            listener?.onSuccess(loginResponse)
+            Coroutiness.main{
+
+                val loginResponse=UserRepository().userLogin(email!!, password!!)
+
+                if (loginResponse.isSuccessful) {
+                 //   listener?.onFailure("code: ${loginResponse.body()?.isSuccessful.toString()}")
+                    listener?.onSuccess(loginResponse.body()?.user!!)
+                }else{
+                    listener?.onFailure("Error code: ${loginResponse.code()}")
+                }
+
+
+            }
         }
 
 

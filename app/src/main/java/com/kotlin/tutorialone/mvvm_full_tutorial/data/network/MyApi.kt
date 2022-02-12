@@ -1,19 +1,22 @@
 package com.kotlin.tutorialone.mvvm_full_tutorial.data.network
 
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface MyApi {
 
-    @FormUrlEncoded
+   // @FormUrlEncoded
     @POST("login.php")
-    fun userLogin(@Field("email") email: String, @Field("password") password: String): Call<ResponseBody>
+   suspend fun userLogin(
+        @Query("email") email: String,
+        @Query("password") password: String)
+   :Response<AuthResponseModel>
+//suspend is the center of coroutine. it simplified the function resume and pause
 
     companion object{
         operator fun invoke(): MyApi {

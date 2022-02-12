@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.kotlin.tutorialone.R
 import com.kotlin.tutorialone.databinding.MvvmLoginActivityBinding
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.entities.UserEntity
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
 import com.kotlin.tutorialone.mvvm_full_tutorial.utils.showToast
 import kotlinx.coroutines.Job
 
@@ -38,18 +40,13 @@ class MvvmLoginActivity : AppCompatActivity(),AuthListener {
         progressbar.visibility=View.VISIBLE
     }
 
-    override fun onSuccess(loginResponse: LiveData<String>) {
+    override fun onSuccess(loginResponse:UserEntity) {
 
-
-        loginResponse.observe(this, Observer {
-
-            progressbar.visibility=View.GONE
-            showToast("api called")
-        })
+        showToast( loginResponse.name_user+" "+loginResponse.email_user+" ")
 
     }
 
     override fun onFailure(message: String) {
-        showToast("Login failure $message")
+        showToast(" $message")
     }
 }
