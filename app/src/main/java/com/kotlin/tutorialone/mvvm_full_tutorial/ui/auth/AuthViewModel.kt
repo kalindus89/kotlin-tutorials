@@ -2,6 +2,7 @@ package com.kotlin.tutorialone.mvvm_full_tutorial.ui.auth
 
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.repository.UserRepository
 
 class AuthViewModel : ViewModel() {
     //two way databinding
@@ -17,8 +18,14 @@ class AuthViewModel : ViewModel() {
             listener?.onFailure("Null Or Empty")
         }
         else{
-            listener?.onSuccess()
+
+            listener?.onStarted()
+
+            val loginResponse=UserRepository().userLogin(email!!,password!!)
+            listener?.onSuccess(loginResponse)
         }
+
+
 
     }
 
