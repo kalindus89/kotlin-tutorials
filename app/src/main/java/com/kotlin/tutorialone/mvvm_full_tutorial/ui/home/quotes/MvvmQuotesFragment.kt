@@ -6,13 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.kotlin.tutorialone.R
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.AppDatabase
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.MyApi
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.NetworkConnectorInterceptor
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.repository.QuotesRepository
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.repository.UserRepository
+import com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.profile.ProfileViewModelFactory
+import com.kotlin.tutorialone.mvvm_full_tutorial.utils.Coroutiness
+import com.kotlin.tutorialone.mvvm_full_tutorial.utils.showToast
 
 class MvvmQuotesFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MvvmQuotesFragment()
-    }
 
     private lateinit var viewModel: MvvmQuotesViewModel
 
@@ -20,12 +26,28 @@ class MvvmQuotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+
+        val networkConnectorInterceptor= NetworkConnectorInterceptor(requireContext())
+        val api = MyApi(networkConnectorInterceptor)
+        val db = AppDatabase(requireContext())
+        val repository = QuotesRepository(api,db)
+        val factory= QuotesViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, factory).get(MvvmQuotesViewModel::class.java)
+
+        Coroutiness.main {
+           val quotes= viewModel.quotes.await()
+            quotes.observe(viewLifecycleOwner, Observer {
+
+                context?.showToast(it.size.toString())
+            })
+        }
+
         return inflater.inflate(R.layout.mvvm_quotes_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MvvmQuotesViewModel::class.java)
+
         // TODO: Use the ViewModel
     }
 

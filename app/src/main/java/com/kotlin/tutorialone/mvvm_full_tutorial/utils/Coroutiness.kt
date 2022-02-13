@@ -12,4 +12,8 @@ object Coroutiness { // object is link static in java
         }
 
 
+    fun io(work:suspend (()->Unit))=
+        CoroutineScope(Dispatchers.IO).launch {
+            work()
+        }
 }

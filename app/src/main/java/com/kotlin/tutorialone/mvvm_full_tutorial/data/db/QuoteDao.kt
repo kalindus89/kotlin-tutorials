@@ -14,7 +14,7 @@ interface QuoteDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE) //OnConflictStrategy overwrite the save user in conflict
-    fun saveAllQuotes(quotes: List<Quotes>) : Long // return long value after inserting success
+    fun saveAllQuotes(quotes: List<Quotes>)
 
     @Query("SELECT * FROM quotes")
     fun getQuotes(): LiveData<List<Quotes>>

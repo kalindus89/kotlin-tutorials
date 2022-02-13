@@ -11,4 +11,9 @@
         android:name="com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.profile.MvvmProfileFragment"
         android:label="Profile"
         tools:layout="@layout/mvvm_profile_fragment" />
+    <fragment
+        android:id="@+id/mvvmQuotesFragment"
+        android:name="com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.quotes.MvvmQuotesFragment"
+        android:label="mvvm_quotes_fragment"
+        tools:layout="@layout/mvvm_quotes_fragment" />
 </navigation>
