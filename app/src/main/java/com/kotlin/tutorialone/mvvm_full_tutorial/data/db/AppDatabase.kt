@@ -4,18 +4,20 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.entities.Quotes
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.entities.UserEntity
 
 
 // check and create the database
 
 @Database(
-    entities = [UserEntity::class],
+    entities = [UserEntity::class,Quotes::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getUserDao():UserDao
+    abstract fun getQuoteDao():QuoteDao
 
     companion object{
 

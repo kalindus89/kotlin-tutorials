@@ -1,6 +1,7 @@
 package com.kotlin.tutorialone.mvvm_full_tutorial.data.network
 
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.QuotesResponseModel
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -18,6 +19,12 @@ interface MyApi {
         @Query("password") password: String)
    :Response<AuthResponseModel>
 //suspend is the center of coroutine. it simplified the function resume and pause
+
+
+
+    @POST("quotes.php")
+    suspend fun getQuotes():Response<QuotesResponseModel>
+
 
     companion object{
         operator fun invoke(networkConnectorInterceptor: NetworkConnectorInterceptor
