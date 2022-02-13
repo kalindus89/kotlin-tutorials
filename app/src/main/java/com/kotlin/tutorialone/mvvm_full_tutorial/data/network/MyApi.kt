@@ -1,6 +1,7 @@
 package com.kotlin.tutorialone.mvvm_full_tutorial.data.network
 
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -19,8 +20,13 @@ interface MyApi {
 //suspend is the center of coroutine. it simplified the function resume and pause
 
     companion object{
-        operator fun invoke(): MyApi {
+        operator fun invoke(networkConnectorInterceptor: NetworkConnectorInterceptor
+        ): MyApi {  //invoke()  can be called on any instances of the class without a method name!
+
+            val okkHttpClient =OkHttpClient.Builder().addInterceptor(networkConnectorInterceptor).build()
+
             return Retrofit.Builder()
+                .client(okkHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://testapi.nixetechnology.com/")
                 .build()

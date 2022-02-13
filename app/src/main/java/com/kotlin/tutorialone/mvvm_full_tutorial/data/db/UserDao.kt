@@ -13,7 +13,7 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.entities.UserEntity
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE) //OnConflictStrategy overwrite the save user in conflict
-    fun insert_data(user:UserEntity) : Long // return long value after inserting success
+    suspend fun insert_data(user:UserEntity) : Long // return long value after inserting success
 
     @Query("SELECT * FROM userentity where uid=$CURRENT_USER_ID")
     fun getUser():LiveData<UserEntity>
