@@ -48,7 +48,7 @@ class MvvmLoginActivity : AppCompatActivity(),AuthListener {
 
         authViewModel.listener=this
 
-     /*   authViewModel.getLoggedInUser().observe(this, Observer { user->
+        authViewModel.getLoggedInUser().observe(this, Observer { user->
             if(user !=null){
 
                 Intent(this,MvvmHomeActivity::class.java).also {
@@ -56,7 +56,7 @@ class MvvmLoginActivity : AppCompatActivity(),AuthListener {
                     startActivity(it)
                 }
             }
-        })*/
+        })
 
 
     }

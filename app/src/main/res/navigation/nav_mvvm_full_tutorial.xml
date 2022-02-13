@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_mvvm_full_tutorial"
+    android:label="Profile"
+    app:startDestination="@id/mvvmProfileFragment">
+
+    <fragment
+        android:id="@+id/mvvmProfileFragment"
+        android:name="com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.profile.MvvmProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/mvvm_profile_fragment" />
+</navigation>
