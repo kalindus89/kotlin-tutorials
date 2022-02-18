@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.kotlin.tutorialone.R
 import com.kotlin.tutorialone.databinding.MvvmLoginActivityBinding
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.AppDatabase
@@ -20,62 +21,97 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.NetworkConnectorIn
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.repository.UserRepository
 import com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.MvvmHomeActivity
-import com.kotlin.tutorialone.mvvm_full_tutorial.utils.showSnackbar
-import com.kotlin.tutorialone.mvvm_full_tutorial.utils.showToast
+import com.kotlin.tutorialone.mvvm_full_tutorial.utils.*
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
-class MvvmLoginActivity : AppCompatActivity(),AuthListener {
+class MvvmLoginActivity : AppCompatActivity() {
 
-    private lateinit var  progressbar:ProgressBar
+    private lateinit var progressbar: ProgressBar
+    private lateinit var binding: MvvmLoginActivityBinding
+    private lateinit var authViewModel: AuthViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(R.layout.mvvm_login_activity) // use binding
+        // setContentView(R.layout.mvvm_login_activity) // use binding
 
 
-        val networkConnectorInterceptor=NetworkConnectorInterceptor(this)
-        val api =MyApi(networkConnectorInterceptor)
-        val db =AppDatabase(this)
-        val repository =UserRepository(api,db)
-        val factory=AuthViewModelFactory(repository)
+        val networkConnectorInterceptor = NetworkConnectorInterceptor(this)
+        val api = MyApi(networkConnectorInterceptor)
+        val db = AppDatabase(this)
+        val repository = UserRepository(api, db)
+        val factory = AuthViewModelFactory(repository)
 
 
-        val binding:MvvmLoginActivityBinding= DataBindingUtil.setContentView(this,R.layout.mvvm_login_activity)
-      //  MvvmLoginActivityBinding xml name
-         progressbar =findViewById<ProgressBar>(R.id.progress_bar);
-       val authViewModel= ViewModelProvider(this,factory).get(AuthViewModel::class.java)
-        binding.authViewModel=authViewModel
+        binding = DataBindingUtil.setContentView(this, R.layout.mvvm_login_activity)
+        //  MvvmLoginActivityBinding xml name
+        authViewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
 
-        authViewModel.listener=this
+        progressbar = findViewById<ProgressBar>(R.id.progress_bar);
 
-        authViewModel.getLoggedInUser().observe(this, Observer { user->
-            if(user !=null){
 
-                Intent(this,MvvmHomeActivity::class.java).also {
-                    it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // finish this activity
+        authViewModel.getLoggedInUser().observe(this, Observer { user ->
+           /* if (user != null) {
+
+                Intent(this, MvvmHomeActivity::class.java).also {
+                    it.flags =
+                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // finish this activity
                     startActivity(it)
                 }
-            }
+            }*/
         })
 
+        binding.buttonSignIn.setOnClickListener {
+            loginUser()
+        }
+
 
     }
 
-    override fun onStarted() {
+    private fun loginUser() {
+        val email = binding.editTextEmail.text.toString().trim()
+        val password = binding.editTextPassword.text.toString().trim()
 
-        progressbar.visibility=View.VISIBLE
+
+        lifecycleScope.launch {
+
+            if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
+                showToast("Null Or Empty")
+            }
+
+            else {
+                try {
+                    val loginResponse = authViewModel.userLogin(email!!, password!!)
+
+
+                    if(loginResponse.isSuccessful==false){
+                        binding.rootLayout.showSnackbar("Error ${loginResponse.message}")
+                    }else{
+                        loginResponse.user?.let { // run only if not null
+
+                            if (loginResponse?.isSuccessful == true) {
+                                binding.rootLayout.showSnackbar("User name: " + loginResponse.user.name_user
+                                        + ". user email: " + loginResponse.user.email_user + " ")
+                                authViewModel.saveLoggedInUser(it)
+
+                            }else{
+                                binding.rootLayout.showSnackbar("no user")
+                            }
+                        }
+                    }
+
+
+
+
+                } catch (e: ApiExceptionss) {
+                    e.printStackTrace()
+
+                } catch (e: NoInternetException) {
+                    e.printStackTrace()
+                }
+
+            }
+        }
     }
 
-    override fun onSuccess(loginResponse:UserEntity) {
-
-        progressbar.visibility=View.GONE
-        val root_layout=findViewById<CoordinatorLayout>(R.id.root_layout)
-        root_layout.showSnackbar( "User name: "+loginResponse.name_user+". user email: "+loginResponse.email_user+" ")
-
-    }
-
-    override fun onFailure(message: String) {
-        progressbar.visibility=View.GONE
-        showToast(" $message")
-    }
 }
