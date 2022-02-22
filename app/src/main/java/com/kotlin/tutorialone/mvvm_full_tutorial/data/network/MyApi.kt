@@ -26,7 +26,10 @@ interface MyApi {
     suspend fun getQuotes():Response<QuotesResponseModel>
 
     @GET("quotes.php")
-     fun getQuotesForCoroutine():Call<QuotesResponseModel>
+   suspend fun getQuotesForCoroutine():Response<QuotesResponseModel>
+
+     @GET("quotes.php")
+     fun getQuotesForCoroutineNormalWay():Call<QuotesResponseModel>
 
 
     companion object{
