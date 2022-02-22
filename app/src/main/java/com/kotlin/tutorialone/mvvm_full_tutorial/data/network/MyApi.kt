@@ -25,6 +25,9 @@ interface MyApi {
     @POST("quotes.php")
     suspend fun getQuotes():Response<QuotesResponseModel>
 
+    @GET("quotes.php")
+     fun getQuotesForCoroutine():Call<QuotesResponseModel>
+
 
     companion object{
         operator fun invoke(networkConnectorInterceptor: NetworkConnectorInterceptor

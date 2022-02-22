@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorialOne">
         <activity
+            android:name=".mvvm_full_tutorial.ui.auth.MvvmLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".mvvm_full_tutorial.ui.home.MvvmHomeActivity"
             android:exported="false" />
         <activity
@@ -38,7 +41,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm_full_tutorial.ui.auth.MvvmLoginActivity"
+            android:name=".mvvm_full_tutorial.coroutine_sample.CoroutineSampleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
