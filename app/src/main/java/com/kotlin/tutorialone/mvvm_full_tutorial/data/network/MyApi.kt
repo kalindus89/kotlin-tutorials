@@ -2,6 +2,7 @@ package com.kotlin.tutorialone.mvvm_full_tutorial.data.network
 
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.AuthResponseModel
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.QuotesResponseModel
+import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.QuotesResponseModel22
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -27,6 +28,9 @@ interface MyApi {
 
     @GET("quotes.php")
    suspend fun getQuotesForCoroutine():Response<QuotesResponseModel>
+
+    @GET("new_quotes.php")
+   suspend fun getQuotesForCoroutineSecond():Response<QuotesResponseModel22>
 
      @GET("quotes.php")
      fun getQuotesForCoroutineNormalWay():Call<QuotesResponseModel>

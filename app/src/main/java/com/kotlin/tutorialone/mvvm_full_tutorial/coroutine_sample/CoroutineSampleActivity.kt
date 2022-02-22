@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +15,9 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.data.db.entities.Quotes
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.MyApi
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.NetworkConnectorInterceptor
 import com.kotlin.tutorialone.mvvm_full_tutorial.data.network.response.QuotesResponseModel
+import com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.quotes.MvvmQuotesViewModel
 import com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.quotes.QuotesRecyclerAdapter
+import com.kotlin.tutorialone.mvvm_full_tutorial.ui.home.quotes.QuotesViewModelFactory
 import com.kotlin.tutorialone.mvvm_retrofit.views.MoviesRecyclerAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -27,6 +31,7 @@ class CoroutineSampleActivity : AppCompatActivity() {
 
 
     private lateinit var coTestRecyclerView: RecyclerView
+    private lateinit var viewModel: CoroutineViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,9 +52,14 @@ class CoroutineSampleActivity : AppCompatActivity() {
 
                 coTestRecyclerView.adapter= QuotesRecyclerAdapter(getQuotesCoroutineWay())
             }
-          //  getQuotesNormalWay()
 
         }
+
+        val factory= CoroutineViewModelFactory(this)
+        viewModel = ViewModelProvider(this, factory).get(CoroutineViewModel::class.java)
+        viewModel.quotes.observe(this, Observer {
+            coTestRecyclerView.adapter= QuotesRecyclerAdapter(it)
+        })
 
     }
 
