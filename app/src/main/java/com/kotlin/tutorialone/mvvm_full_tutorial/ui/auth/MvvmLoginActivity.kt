@@ -100,9 +100,6 @@ class MvvmLoginActivity : AppCompatActivity() {
                         }
                     }
 
-
-
-
                 } catch (e: ApiExceptionss) {
                     e.printStackTrace()
 
