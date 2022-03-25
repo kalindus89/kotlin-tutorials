@@ -9,9 +9,11 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.ui.auth.AuthViewModelFactory
 
 class AppContainer (context:Context){
 
+    //for dependency injection
+
     private val networkConnectorInterceptor = NetworkConnectorInterceptor(context)
     private val api = MyApi(networkConnectorInterceptor)
     private val db = AppDatabase(context)
-    private val repository = UserRepository(api, db)
-    private val factory = AuthViewModelFactory(repository)
+     val repository = UserRepository(api, db)
+     var authContainer:AuthContainer ?= null
 }
