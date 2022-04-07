@@ -5,5 +5,5 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.ui.auth.AuthViewModelFactory
 
 class AuthContainer(userRepository: UserRepository) {
 
-    val authViewModelFactory =AuthViewModelFactory(userRepository)
+    /*val authViewModelFactory =AuthViewModelFactory(userRepository)*/
 }

@@ -34,12 +34,12 @@ class MvvmLoginActivity : AppCompatActivity() {
     private lateinit var binding: MvvmLoginActivityBinding
     var authViewModel: AuthViewModel ?= null
 
-    lateinit var appContainer: AppContainer // initialize in the Application Class
+   // lateinit var appContainer: AppContainer // initialize in the Application Class
 
     override fun onDestroy() {
         super.onDestroy()
 
-        appContainer.authContainer=null
+      //  appContainer.authContainer=null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,12 +53,12 @@ class MvvmLoginActivity : AppCompatActivity() {
         val repository = UserRepository(api, db)
         val factory = AuthViewModelFactory(repository)*/
 
-        appContainer=(application as MVVMApplication).appContainer
-        appContainer.authContainer= AuthContainer(appContainer.repository)
+      //  appContainer=(application as MVVMApplication).appContainer
+      //  appContainer.authContainer= AuthContainer(appContainer.repository)
 
         binding = DataBindingUtil.setContentView(this, R.layout.mvvm_login_activity)
         //  MvvmLoginActivityBinding xml name
-        authViewModel = ViewModelProvider(this, appContainer.authContainer!!.authViewModelFactory).get(AuthViewModel::class.java)
+        //authViewModel = ViewModelProvider(this, appContainer.authContainer!!.authViewModelFactory).get(AuthViewModel::class.java)
 
         progressbar = findViewById<ProgressBar>(R.id.progress_bar);
 

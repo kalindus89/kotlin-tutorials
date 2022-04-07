@@ -11,9 +11,12 @@ class AppContainer (context:Context){
 
     //for dependency injection
 
-    private val networkConnectorInterceptor = NetworkConnectorInterceptor(context)
+   /* private val networkConnectorInterceptor = NetworkConnectorInterceptor(context)
     private val api = MyApi(networkConnectorInterceptor)
     private val db = AppDatabase(context)
      val repository = UserRepository(api, db)
-     var authContainer:AuthContainer ?= null
+     var authContainer:AuthContainer ?= null*/
+
+    fun test(){
+    }
 }

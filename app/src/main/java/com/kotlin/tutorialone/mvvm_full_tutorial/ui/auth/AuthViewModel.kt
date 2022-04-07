@@ -10,7 +10,7 @@ import com.kotlin.tutorialone.mvvm_full_tutorial.utils.ApiExceptionss
 import com.kotlin.tutorialone.mvvm_full_tutorial.utils.Coroutiness
 import com.kotlin.tutorialone.mvvm_full_tutorial.utils.NoInternetException
 
-class AuthViewModel(private val repository: UserRepository) : ViewModel() {
+class AuthViewModel  constructor(private val repository: UserRepository) : ViewModel() {
 
     suspend fun userLogin(email:String, password:String)=repository.userLogin(email,password)
 
